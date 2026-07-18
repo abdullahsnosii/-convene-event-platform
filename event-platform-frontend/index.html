@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convene</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-brand">Convene</div>
+    <div class="nav-links">
+      <a href="#dashboard" data-view="dashboard" class="nav-link">Dashboard</a>
+      <a href="#events" data-view="events" class="nav-link">Events</a>
+      <a href="#create" data-view="create" class="nav-link">New Event</a>
+    </div>
+  </nav>
+
+  <div id="toast-container"></div>
+
+  <main id="app">
+
+    <section id="view-dashboard" class="view">
+      <h1>Dashboard</h1>
+      <div id="dashboard-content">
+        <p>Loading...</p>
+      </div>
+    </section>
+
+    <section id="view-events" class="view">
+      <h1>Events</h1>
+
+      <div class="filters">
+        <input type="text" id="search-input" placeholder="Search by title...">
+        <input type="text" id="category-input" placeholder="Category">
+        <input type="text" id="location-input" placeholder="Location">
+        <input type="date" id="date-input">
+        <button id="clear-filters-btn">Clear Filters</button>
+      </div>
+
+      <div id="events-list">
+        <p>Loading...</p>
+      </div>
+    </section>
+
+    <section id="view-detail" class="view">
+      <div id="event-detail-content">
+        <p>Loading...</p>
+      </div>
+    </section>
+
+    <section id="view-create" class="view">
+      <h1 id="form-title">Create Event</h1>
+
+      <form id="event-form">
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input type="text" id="title" name="title">
+          <span class="error-message" id="title-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="category">Category</label>
+          <input type="text" id="category" name="category">
+          <span class="error-message" id="category-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="location">Location</label>
+          <input type="text" id="location" name="location">
+          <span class="error-message" id="location-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="date">Date & Time</label>
+          <input type="datetime-local" id="date" name="date">
+          <span class="error-message" id="date-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="capacity">Capacity</label>
+          <input type="number" id="capacity" name="capacity">
+          <span class="error-message" id="capacity-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea id="description" name="description"></textarea>
+        </div>
+
+        <button type="submit">Save Event</button>
+      </form>
+    </section>
+
+  </main>
+
+  <div id="confirm-modal" class="modal hidden">
+    <div class="modal-content">
+      <p id="confirm-message">Are you sure?</p>
+      <button id="confirm-yes">Yes, Delete</button>
+      <button id="confirm-no">Cancel</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
